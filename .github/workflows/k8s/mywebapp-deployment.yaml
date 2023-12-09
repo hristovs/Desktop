@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mywebapp
+  name: mywebapp-deployment
 spec:
+  replicas: 3  # Adjust as needed
   selector:
     matchLabels:
       app: mywebapp
@@ -10,3 +11,9 @@ spec:
     metadata:
       labels:
         app: mywebapp
+    spec:
+      containers:
+        - name: mywebapp
+          image: ratemylandlord.azurecr.io/mywebapp:latest
+          ports:
+            - containerPort: 80
