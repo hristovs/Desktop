@@ -1,0 +1,4 @@
+apiVersion: v2
+name: mywebapp-chart
+description: A Helm chart for deploying MyWebApp on AKS
+version: 0.1.0

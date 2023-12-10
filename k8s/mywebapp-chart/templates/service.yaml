@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mywebapp-chart.fullname" . }}
+  labels:
+    app: {{ include "mywebapp-chart.name" . }}
+spec:
+  selector:
+    app: {{ include "mywebapp-chart.name" . }}
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: {{ .Values.service.type }}
